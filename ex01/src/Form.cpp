@@ -53,12 +53,20 @@ void Form::checkGrade(const int grade) {
 }
 
 void Form::beSigned(const Bureaucrat &bureaucrat) {
-	checkGrade(bureaucrat.getGrade());
-	if (bureaucrat.getGrade() <= this->grade_required_sign) {
-	} else {
-		throw Form::GradeTooLowException();
+	if (bureaucrat.getGrade() > 150) {
+		throw GradeTooLowException();
 	}
-	this->form_signed = true;
+	if (bureaucrat.getGrade() < 1) {
+		throw GradeTooHighException();
+	}
+	if (this->getGradeRequiredSign() >= bureaucrat.getGrade()) {
+		std::cout << this->getName() << " sign " << this->getName() << "." << std::endl;
+		this->form_signed = true;
+	} else {
+		std::cout << ">>> 🚫 " << bureaucrat.getName() << "  couldn’t sign " << bureaucrat.getName() <<
+				" because he dosent have required grade to sign." << std::endl;
+		throw GradeTooLowException();
+	}
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ GETTERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

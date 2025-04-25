@@ -58,7 +58,7 @@ int main() {
 		Bureaucrat B3("Pierre", 20);
 		B3.signForm(F3);
 		std::cout << "✅ Formulaire signé avec succès" << std::endl;
-	} catch (const Bureaucrat::GradeTooLowException &e) {
+	} catch (const Form::GradeTooLowException &e) {
 		std::cerr << "🔴 >>>> Erreur test B3.signForm(F3); -> " << e.what() << std::endl;
 	}
 
