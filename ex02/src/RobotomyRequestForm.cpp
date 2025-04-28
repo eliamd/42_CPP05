@@ -2,16 +2,17 @@
 // Created by Eliam on 25/04/2025.
 //
 
-#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
 #include <fstream>
+#include <cstdlib>
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", false, 150, 150), target("default") {
-	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Default Constructor Called ━━" << std::endl;
+RobotomyRequestForm::RobotomyRequestForm() : AForm("default", false, 150, 150), target("default") {
+	std::cout << "\n┏━━ 🔨 RobotomyRequestForm Default Constructor Called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -20,11 +21,11 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", false, 150, 15
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, bool form_signed, int grade_required_sign,
-                                             int grade_required_execution, std::string target) : AForm(
+RobotomyRequestForm::RobotomyRequestForm(std::string name, bool form_signed, int grade_required_sign,
+                                         int grade_required_execution, std::string target) : AForm(
 		name, form_signed, grade_required_sign,
 		grade_required_execution), target(target) {
-	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Constructor with args Called ━━━" << std::endl;
+	std::cout << "\n┏━━ 🔨 RobotomyRequestForm Constructor with args Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -33,8 +34,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name, bool form_signed,
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other), target(other.target) {
-	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Copy Constructor Called ━━━" << std::endl;
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other), target(other.target) {
+	std::cout << "\n┏━━ 🔨 RobotomyRequestForm Copy Constructor Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -43,10 +44,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
 	this->form_signed = other.getFormSigned();
 
-	std::cout << "\n┏━━🔨 ShrubberyCreationForm =Operator overload called ━━" << std::endl;
+	std::cout << "\n┏━━🔨 RobotomyRequestForm =Operator overload called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -59,19 +60,19 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ DESTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "\n━━🚫 ShrubberyCreationForm destructor called ━━" << std::endl;
+RobotomyRequestForm::~RobotomyRequestForm() {
+	std::cout << "\n━━🚫 RobotomyRequestForm destructor called ━━" << std::endl;
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ GETTERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-std::string ShrubberyCreationForm::getTarget() {
+std::string RobotomyRequestForm::getTarget() {
 	return (this->target);
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SETTERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FUNCTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
+void RobotomyRequestForm::beSigned(const Bureaucrat &bureaucrat) {
 	if (bureaucrat.getGrade() > 150) {
 		throw GradeTooLowException();
 	}
@@ -88,7 +89,10 @@ void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
 	}
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	srand(time(0));
+	int random_number = rand() % 2;
+
 	if (!this->form_signed) {
 		std::cout << "🔴 >> Form is not signed, cannot execute !" << std::endl;
 		throw FormIsNotSignedException();
@@ -97,19 +101,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		std::cout << "🔴 >> cannot execute grade too low" << std::endl;
 		throw GradeTooHighException();
 	}
+
 	std::cout << "🟢 >> " << executor.getName() << " executed " << this->getName() << std::endl;
-	std::ofstream outfile((target + "_shrubbery").c_str());
-	if (!outfile.is_open()) {
-		throw std::runtime_error("Cannot create output file");
+	std::cout << "* DRILL NOISES*" << std::endl;
+
+	if (random_number == 1) {
+		std::cout << "🤖 >> " << this->target << " has been robotomized !" << std::endl;
+	} else {
+		std::cout << "🤖 >> " << this->target << " failed to be robotomized !" << std::endl;
 	}
-	outfile << "       *      " << std::endl;
-	outfile << "      ***     " << std::endl;
-	outfile << "     *****    " << std::endl;
-	outfile << "    *******   " << std::endl;
-	outfile << "   *********  " << std::endl;
-	outfile << "  *********** " << std::endl;
-	outfile << " *************" << std::endl;
-	outfile << "      |||     " << std::endl;
-	outfile << "      |||     " << std::endl;
-	outfile.close();
 }

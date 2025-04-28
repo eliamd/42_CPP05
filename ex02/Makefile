@@ -23,6 +23,8 @@ NC = \033[0m # No Color
 SRCS = 	src/AForm.cpp \
 		src/Bureaucrat.cpp \
 		src/ShrubberyCreationForm.cpp \
+		src/RobotomyRequestForm.cpp \
+		src/PresidentialPardonForm.cpp \
 		src/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

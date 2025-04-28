@@ -2,16 +2,17 @@
 // Created by Eliam on 25/04/2025.
 //
 
-#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
 #include <fstream>
+#include <cstdlib>
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", false, 150, 150), target("default") {
-	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Default Constructor Called ━━" << std::endl;
+PresidentialPardonForm::PresidentialPardonForm() : AForm("default", false, 150, 150), target("default") {
+	std::cout << "\n┏━━ 🔨 PresidentialPardonForm Default Constructor Called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -20,11 +21,11 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", false, 150, 15
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, bool form_signed, int grade_required_sign,
-                                             int grade_required_execution, std::string target) : AForm(
-		name, form_signed, grade_required_sign,
-		grade_required_execution), target(target) {
-	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Constructor with args Called ━━━" << std::endl;
+PresidentialPardonForm::PresidentialPardonForm(std::string name, bool form_signed, int grade_required_sign,
+                                               int grade_required_execution, std::string target) : AForm(
+	name, form_signed, grade_required_sign,
+	grade_required_execution), target(target) {
+	std::cout << "\n┏━━ 🔨 PresidentialPardonForm Constructor with args Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -33,8 +34,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name, bool form_signed,
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other), target(other.target) {
-	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Copy Constructor Called ━━━" << std::endl;
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm(other),
+	target(other.target) {
+	std::cout << "\n┏━━ 🔨 PresidentialPardonForm Copy Constructor Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -43,10 +45,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
 	this->form_signed = other.getFormSigned();
 
-	std::cout << "\n┏━━🔨 ShrubberyCreationForm =Operator overload called ━━" << std::endl;
+	std::cout << "\n┏━━🔨 PresidentialPardonForm =Operator overload called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
 	std::cout << "┃     getGradeRequiredSign -> " << this->getGradeRequiredSign() << std::endl;
@@ -59,19 +61,19 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ DESTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "\n━━🚫 ShrubberyCreationForm destructor called ━━" << std::endl;
+PresidentialPardonForm::~PresidentialPardonForm() {
+	std::cout << "\n━━🚫 PresidentialPardonForm destructor called ━━" << std::endl;
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ GETTERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-std::string ShrubberyCreationForm::getTarget() {
+std::string PresidentialPardonForm::getTarget() {
 	return (this->target);
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SETTERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FUNCTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
+void PresidentialPardonForm::beSigned(const Bureaucrat &bureaucrat) {
 	if (bureaucrat.getGrade() > 150) {
 		throw GradeTooLowException();
 	}
@@ -88,7 +90,7 @@ void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
 	}
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 	if (!this->form_signed) {
 		std::cout << "🔴 >> Form is not signed, cannot execute !" << std::endl;
 		throw FormIsNotSignedException();
@@ -97,19 +99,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 		std::cout << "🔴 >> cannot execute grade too low" << std::endl;
 		throw GradeTooHighException();
 	}
+
 	std::cout << "🟢 >> " << executor.getName() << " executed " << this->getName() << std::endl;
-	std::ofstream outfile((target + "_shrubbery").c_str());
-	if (!outfile.is_open()) {
-		throw std::runtime_error("Cannot create output file");
-	}
-	outfile << "       *      " << std::endl;
-	outfile << "      ***     " << std::endl;
-	outfile << "     *****    " << std::endl;
-	outfile << "    *******   " << std::endl;
-	outfile << "   *********  " << std::endl;
-	outfile << "  *********** " << std::endl;
-	outfile << " *************" << std::endl;
-	outfile << "      |||     " << std::endl;
-	outfile << "      |||     " << std::endl;
-	outfile.close();
+	std::cout << "🟢 >> " << this->target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
