@@ -10,7 +10,7 @@
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", false, 150, 150), target("default") {
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", false, 145, 137), target("default") {
 	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Default Constructor Called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
@@ -20,10 +20,8 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", false, 150, 15
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, bool form_signed, int grade_required_sign,
-                                             int grade_required_execution, std::string target) : AForm(
-		name, form_signed, grade_required_sign,
-		grade_required_execution), target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm(
+		"ShrubberyCreationForm", false, 145, 137), target(target) {
 	std::cout << "\n┏━━ 🔨 ShrubberyCreationForm Constructor with args Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;

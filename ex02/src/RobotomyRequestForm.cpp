@@ -11,7 +11,7 @@
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("default", false, 150, 150), target("default") {
+RobotomyRequestForm::RobotomyRequestForm() : AForm("default", false, 72, 45), target("default") {
 	std::cout << "\n┏━━ 🔨 RobotomyRequestForm Default Constructor Called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
@@ -21,10 +21,9 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("default", false, 150, 150), 
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string name, bool form_signed, int grade_required_sign,
-                                         int grade_required_execution, std::string target) : AForm(
-		name, form_signed, grade_required_sign,
-		grade_required_execution), target(target) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(
+		"RobotomyRequestForm", false, 72,
+		45), target(target) {
 	std::cout << "\n┏━━ 🔨 RobotomyRequestForm Constructor with args Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;

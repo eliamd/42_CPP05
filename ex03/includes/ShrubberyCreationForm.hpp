@@ -19,8 +19,7 @@ public:
 	// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	ShrubberyCreationForm();
 
-	ShrubberyCreationForm(std::string name, bool form_signed, int grade_required_sign, int grade_required_execution,
-	                      std::string target);
+	ShrubberyCreationForm(std::string target);
 
 	ShrubberyCreationForm(const ShrubberyCreationForm &other);
 

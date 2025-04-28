@@ -13,6 +13,9 @@ class Intern {
 public:
 	// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTORS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	Intern();
+	Intern(const Intern &other);
+	Intern &operator=(const Intern &other);
+	~Intern();
 
 	// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FUNCTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	AForm *makeForm(std::string form_name, std::string form_target);

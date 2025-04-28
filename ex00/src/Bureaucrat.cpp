@@ -60,21 +60,21 @@ void Bureaucrat::setGrade(int grade) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FUNCTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 void Bureaucrat::incrementGrade() {
-	this->grade--;
 	if (this->grade > 150) {
 		throw GradeTooLowException();
-	} else if (this->grade < 1) {
+	} else if (this->grade < 2) {
 		throw GradeTooHighException();
 	}
+	this->grade--;
 }
 
 void Bureaucrat::decrementGrade() {
-	this->grade++;
-	if (this->grade > 150) {
+	if (this->grade > 149) {
 		throw GradeTooLowException();
 	} else if (this->grade < 1) {
 		throw GradeTooHighException();
 	}
+	this->grade++;
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ EXCEPTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -60,7 +60,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
 		throw GradeTooHighException();
 	}
 	if (this->getGradeRequiredSign() >= bureaucrat.getGrade()) {
-		std::cout << this->getName() << " sign " << this->getName() << "." << std::endl;
+		std::cout << bureaucrat.getName() << " sign " << this->getName() << "." << std::endl;
 		this->form_signed = true;
 	} else {
 		std::cout << ">>> 🚫 " << bureaucrat.getName() << "  couldn’t sign " << bureaucrat.getName() <<

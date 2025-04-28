@@ -11,7 +11,7 @@
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("default", false, 150, 150), target("default") {
+PresidentialPardonForm::PresidentialPardonForm() : AForm("default", false, 25, 5), target("default") {
 	std::cout << "\n┏━━ 🔨 PresidentialPardonForm Default Constructor Called ━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;
@@ -21,10 +21,9 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("default", false, 150, 
 	std::cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string name, bool form_signed, int grade_required_sign,
-                                               int grade_required_execution, std::string target) : AForm(
-	name, form_signed, grade_required_sign,
-	grade_required_execution), target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(
+	"PresidentialPardonForm", false, 25,
+	5), target(target) {
 	std::cout << "\n┏━━ 🔨 PresidentialPardonForm Constructor with args Called ━━━" << std::endl;
 	std::cout << "┃     name -> " << this->name << std::endl;
 	std::cout << "┃     form_signed -> " << this->form_signed << std::endl;

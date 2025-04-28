@@ -19,8 +19,7 @@ public:
 	// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	RobotomyRequestForm();
 
-	RobotomyRequestForm(std::string name, bool form_signed, int grade_required_sign, int grade_required_execution,
-	                    std::string target);
+	RobotomyRequestForm(std::string target);
 
 	RobotomyRequestForm(const RobotomyRequestForm &other);
 

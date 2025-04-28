@@ -19,8 +19,7 @@ public:
 	// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONSTRUCTOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	PresidentialPardonForm();
 
-	PresidentialPardonForm(std::string name, bool form_signed, int grade_required_sign, int grade_required_execution,
-	                       std::string target);
+	PresidentialPardonForm(std::string target);
 
 	PresidentialPardonForm(const PresidentialPardonForm &other);
 
